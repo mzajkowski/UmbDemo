@@ -1,0 +1,21 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+
+    /* 
+    
+        Just grab a query from querystring and perform Search through the Pulished content. 
+        Simple! 
+        
+    */
+    var query = Request.QueryString["q"] ?? string.Empty;
+    if (!string.IsNullOrWhiteSpace(query))
+    {
+        foreach (var result in Umbraco.TypedSearch(query))
+        {
+            <div>
+                <a href="@result.Url">@result.Name</a>
+            </div>
+        }
+    }
+}

@@ -1,0 +1,15 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = "Master.cshtml";
+}
+
+@* Simple partial View - it's normal MVC, yep? *@
+@Html.Partial("Homepage/_Header")
+
+@* Surface controller action using SurfaceMvcController *@
+@Html.Action("Index", "HomepageSurface")
+
+@* Displaying fields from Content of this document *@
+<h1>@Umbraco.Field("title", altFieldAlias: "pageName")</h1>
+@Umbraco.Field("bodyText")
+

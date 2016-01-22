@@ -1,0 +1,13 @@
+﻿{
+	propertyEditors: [
+		{
+			alias: "My.CustomPropertyEditor",
+			name: "My custom property editor",
+			editor: {
+				view: "~/App_Plugins/Demo/demoeditor.html"
+			}
+		}
+	],
+	javascript: [
+	]
+}
